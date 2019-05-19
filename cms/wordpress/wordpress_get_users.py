@@ -16,9 +16,9 @@ def poc(arg, **kwargs):
     uses = p.findall(hh.text())
     if uses!= None:
         result = {
-            "name": "wordpress_get_users",  # 插件名称
+            "name": "wordpress_get_users插件名称",  # 插件名称
             "content": "获得用户名",  # 插件返回内容详情，会造成什么后果。
             "url": arg,  # 漏洞存在url
-            "tag": "wordpress_get_users"  # 漏洞标签
+            "tag": "wordpress_get_users洞标签"  # 漏洞标签
         }
     return result
